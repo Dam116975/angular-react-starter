@@ -1,30 +1,38 @@
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import { AboutComponent } from './modules/general/about/about.component';
-import { ContactComponent } from './modules/general/contact/contact.component';
-import { MailingComponent } from './modules/general/contact/mailing/mailing.component';
-import { MappingComponent } from './modules/general/contact/mapping/mapping.component';
-import { WebsiteComponent } from './modules/general/contact/website/website.component';
 import { HomeComponent } from './modules/general/home/home.component';
-import { LoginComponent } from './modules/general/login/login.component';
-import { SignupComponent } from './modules/general/signup/signup.component';
 import { NotFoundComponent } from './modules/general/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'contact',
-    component: ContactComponent,
-    children: [
-      { path: '', component: MailingComponent },
-      { path: 'mailing', component: MailingComponent },
-      { path: 'mapping', component: MappingComponent },
-      { path: 'website', component: WebsiteComponent },
-    ],
+    loadChildren: () =>
+      import('./modules/general/contact/contact.module').then(
+        (mod) => mod.ContactModule
+      ),
   },
-  { path: 'about', component: AboutComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./modules/general/about/about.module').then(
+        (mod) => mod.AboutModule
+      ),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./modules/general/login/login.module').then(
+        (mod) => mod.LoginModule
+      ),
+  },
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./modules/general/signup/signup.module').then(
+        (mod) => mod.SignupModule
+      ),
+  },
   { path: '**', component: NotFoundComponent },
 ];
 
