@@ -21,6 +21,8 @@
     "@angular/platform-browser": "15.0.4",
     "@angular/platform-browser-dynamic": "15.0.4",
     "@angular/router": "15.0.4",
+    "@fortawesome/fontawesome-free": "6.2.1",
+    "bootstrap": "5.2.3",
     "rxjs": "7.8.0",
     "tslib": "2.4.1",
     "zone.js": "0.12.0"
@@ -45,5 +47,28 @@
     "karma-jasmine": "5.1.0",
     "karma-jasmine-html-reporter": "2.0.0",
     "typescript": "4.8.2"
-  }
+  },
+  "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/angular-starter",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/params/css/fonts.googleapis.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
+          }
+}
 }

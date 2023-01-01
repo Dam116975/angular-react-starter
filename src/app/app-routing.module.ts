@@ -33,8 +33,18 @@ const routes: Routes = [
         (mod) => mod.SignupModule
       ),
   },
-  { path: '**', component: NotFoundComponent },
+  // { path: '**', component: NotFoundComponent },
+  // {
+  //   path: 'bootstrap',
+  //   loadChildren: () =>
+  //     import('./modules/application/example-bootstrap/tutorial.module').then(
+  //       (mod) => mod.TutorialModule
+  //     ),
+  // },
+
+  // { path: '**', component: NotFoundComponent },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
