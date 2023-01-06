@@ -1,9 +1,10 @@
 export const environment = {
   production: true,
-  application: {
+  application:
+  {
     name: 'angular-starter',
-    angular: 'Angular 14.1.1',
-    bootstrap: 'Bootstrap 5.2.0',
-    fontawesome: 'Font Awesome 6.1.2',
-  },
+    version: 'Angular 15.0.1',
+    bootstrap: 'Bootstrap 5.2.3',
+    fontawesome: 'Font Awesome 6.2.1',
+  }
 };

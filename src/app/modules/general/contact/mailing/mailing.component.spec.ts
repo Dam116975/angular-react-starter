@@ -11,7 +11,9 @@ describe('MailingComponent', () => {
       declarations: [ MailingComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(MailingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

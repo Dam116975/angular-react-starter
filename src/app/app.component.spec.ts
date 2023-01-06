@@ -5,8 +5,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent],
+      imports: [
+        RouterTestingModule
+      ],
+      declarations: [
+        AppComponent
+      ],
     }).compileComponents();
   });
 
@@ -16,9 +20,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-starter'`, () => {
+  it(`should have as title 'angular-bootstrap'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-starter');
+    expect(app.title).toEqual('angular-bootstrap');
   });
+
 });
